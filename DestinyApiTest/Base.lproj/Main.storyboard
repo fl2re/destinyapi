@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,47 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxF-lL-sPV">
+                                <rect key="frame" x="532" y="28" width="48" height="30"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="callAPI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n7e-wi-g3y"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4oy-t2-dgP">
+                                <rect key="frame" x="20" y="28" width="500" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter your username and click search for detailed information on your character." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4f6-qB-CZg">
+                                <rect key="frame" x="20" y="66" width="560" height="526"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4oy-t2-dgP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="6Sq-OT-6vS"/>
+                            <constraint firstItem="4f6-qB-CZg" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="812-qM-jP8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nxF-lL-sPV" secondAttribute="trailing" id="ACM-wX-Dxg"/>
+                            <constraint firstItem="nxF-lL-sPV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Cta-qc-Z7b"/>
+                            <constraint firstItem="4f6-qB-CZg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="VtO-7f-Vwz"/>
+                            <constraint firstItem="4oy-t2-dgP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="bpN-Dp-28U"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4f6-qB-CZg" secondAttribute="bottom" constant="8" id="ipp-uy-ndG"/>
+                            <constraint firstItem="nxF-lL-sPV" firstAttribute="leading" secondItem="4oy-t2-dgP" secondAttribute="trailing" constant="12" id="m6k-Gu-nc1"/>
+                            <constraint firstItem="4f6-qB-CZg" firstAttribute="top" secondItem="4oy-t2-dgP" secondAttribute="bottom" constant="8" id="nyZ-nR-5iM"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="apiTextView" destination="4f6-qB-CZg" id="EtU-je-kXM"/>
+                        <outlet property="usernameTextField" destination="4oy-t2-dgP" id="mPV-Gk-tyv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="219" y="387"/>
         </scene>
     </scenes>
 </document>
